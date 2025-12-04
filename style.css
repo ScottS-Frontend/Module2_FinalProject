@@ -34,7 +34,11 @@ body {
 }
 
 section {
-  padding: 0 32px;
+  padding: 0 24px;
+}
+
+#landing {
+  padding: 32px 42px 0;
 }
 
 main {
@@ -47,19 +51,25 @@ NAVBAR ↓
 
 */
 
+.row {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 nav {
-  padding-top: 32px;
+  padding-top: 0px;
   display: flex;
 }
 
 .nav__row {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 16px;
-  margin: 12px auto 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;           
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .nav__logo {
@@ -83,6 +93,12 @@ nav {
   letter-spacing: 0.6px;
 }
 
+.nav__links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 .nav__link {
   font-size: 14px;
   font-weight: 600;
@@ -97,7 +113,8 @@ nav {
 }
 
 .login {
-  margin-left: 48px;
+  margin-right: 8px;
+  margin-left: 54px;
 }
 
 .nav__link::after {
