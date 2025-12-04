@@ -48,7 +48,7 @@ NAVBAR ↓
 */
 
 nav {
-  height: 89px;
+  padding-top: 32px;
   display: flex;
 }
 
@@ -60,21 +60,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-}
-
-ul.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-li {
-  list-style-type: none;
 }
 
 .nav__logo {
@@ -90,21 +75,65 @@ li {
   margin-left: -6px;
 }
 
+.nav__logo--title {
+  font-weight: 900;
+  font-size: 24px;
+  margin-left: 12px;
+  padding-bottom: 2px;
+  letter-spacing: 0.6px;
+}
+
 .nav__link {
-  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 4px;
+  letter-spacing: 0.35px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #243e63;
+  margin: 0 24px;
+  transition: color 200ms ease;
 }
 
-.nav__links {
-  padding: 0 0 2px;
+.login {
+  margin-left: 48px;
 }
 
-.nav_link a {
-  font-weight: 500;
-  transition-color: 200ms ease;
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background-color: #6415ff;
+  opacity: 0;
+  transition: opacity 200ms ease;
 }
 
-.nav__link a:hover {
+.nav__link:hover {
   color: #6415ff;
+}
+
+.nav__link:hover::after {
+  opacity: 1;
+}
+
+.nav__signup {
+  padding: 10px 32px;
+  border-radius: 9999px;
+  background-color: #6415ff;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 24px;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.nav__signup:hover {
+  background-color: #5712e6;
+  color: #fff; 
 }
 
 .btn__menu {
