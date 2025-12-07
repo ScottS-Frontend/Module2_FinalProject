@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", system-ui;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #243e63;
 }
 
@@ -33,12 +32,21 @@ body {
   color: #6415ff;
 }
 
+.p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1 {
+
+}
+
 section {
   padding: 0 24px;
 }
 
 #landing {
-  padding: 32px 42px 0;
+  padding: 12px 20px 0;
 }
 
 main {
@@ -58,18 +66,16 @@ NAVBAR ↓
 }
 
 nav {
-  padding-top: 0px;
-  display: flex;
+  padding: 24px 0 0 ;
 }
 
 .nav__row {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0;           
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .nav__logo {
@@ -96,7 +102,6 @@ nav {
 .nav__links {
   display: flex;
   align-items: center;
-  margin-left: auto;
 }
 
 .nav__link {
@@ -108,13 +113,12 @@ nav {
   display: inline-block;
   text-decoration: none;
   color: #243e63;
-  margin: 0 24px;
+  margin: 0 16px;
   transition: color 200ms ease;
 }
 
 .login {
-  margin-right: 8px;
-  margin-left: 54px;
+  margin-left: 40px;
 }
 
 .nav__link::after {
@@ -143,8 +147,9 @@ nav {
   background-color: #6415ff;
   color: #fff;
   font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
-  margin: 0 24px;
+  margin: 0 0 0 24px;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -221,17 +226,112 @@ nav {
   right: 18px;
 }
 
-/* 
+/*  HEADER / ABOUT US ↓ */
 
-HEADER / ABOUT US ↓
+.row {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
-*/
+header {
+  margin-top: 22px;
+}
 
+/* HERO ROW LAYOUT */
 header .row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
+
+/* LEFT COLUMN: TEXT BLOCK */
+.row__header--title {
+  flex: 1;
+  max-width: 38rem;
+}
+
+.header__description {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.25;
+}
+
+.header__description--para {
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.625;
+  color: #4a5568;
+  max-width: 31rem;
+}
+
+/* EMAIL CTA BAR UNDER HERO TEXT */
+.header__cta {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.header__cta-form {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  padding: 6px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.header__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #4a5568;
+  background-color: transparent;
+  border-radius: 9999px;
+  text-align: left;
+}
+
+.header__input::placeholder {
+  color: #a0aec0;
+  font-weight: 500;
+}
+
+.header__cta-btn {
+  padding: 16px 36px;
+  border-radius: 9999px;
+  border: none;
+  background-color: #6415ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.header__cta-btn:hover {
+  background-color: #4b10c9;
+  transform: translateY(-1px);
+}
+
+/* RIGHT COLUMN: HERO IMAGE */
+
+.header__image {
+  flex: 2;                 /* image column takes more space */
+  display: flex;
+  justify-content: flex-start;  /* image moves further left in its column */
+}
+
+.header__image--img {
+  width: 100%;
+  max-width: 900px;        /* larger illustration */
+}
+
 
 /* 
 
@@ -338,20 +438,16 @@ MOBILE RESPONSIVENESS ↓
 
 */
 
-@media (max-width: 1280px) {
-  header .row {
-    align-items: flex-end;
-  }
-}
-
 @media (max-width: 1024px) {
   .btn__menu {
     display: block;
   }
+
   header .row {
     flex-direction: column;
     align-items: center;
   }
+
   footer {
     padding: 80px 32px;
   }
@@ -383,4 +479,31 @@ MOBILE RESPONSIVENESS ↓
   main {
     margin-bottom: 80px;
   }
+}
+
+
+/* HERO LAYOUT + COLUMN SPACING */
+
+#landing header .row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#landing .row__header--title {
+  flex: 1 1 0;
+  max-width: 42rem;
+}
+
+#landing .header__image {
+  flex: 1.6 1 0;        /* bigger image column */
+  display: flex;
+  justify-content: center;
+  margin-left: 64px;    /* ⬅ adds clear space between text and image */
+}
+
+#landing .header__image--img {
+  width: 100%;
+  max-width: 820px;      /* keep the nice big illustration */
 }
