@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  padding: 96px 0;
+  padding: 96px 0px;
 }
 
 .purple {
@@ -41,12 +41,37 @@ h1 {
 
 }
 
+
 section {
-  padding: 0 24px;
+  padding: 0 18px;
+}
+
+.section__tag {
+  font-size: 16px;
+  color: #6415ff;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section__title {
+  font-size: 48px;
+  font-weight: 900;
+  color: rgb(36, 62, 99);
+  line-height: 1.5;
+  margin: 16px 0;
+  letter-spacing: 0.025em;
+}
+
+.section__para {
+  font-size: 18px;
+  font-weight: 500;
+  color: #7c8ba1;
+  line-height: 1.625;
 }
 
 #landing {
-  padding: 12px 20px 0;
+  padding: 24px 24px 0;
 }
 
 main {
@@ -66,7 +91,7 @@ NAVBAR ↓
 }
 
 nav {
-  padding: 24px 0 0 ;
+  padding: 0 ;
 }
 
 .nav__row {
@@ -88,7 +113,7 @@ nav {
 .nav__logo--img {
   height: 40px;
   width: 40px;
-  margin-left: -6px;
+  margin-left: 0px;
 }
 
 .nav__logo--title {
@@ -102,24 +127,28 @@ nav {
 .nav__links {
   display: flex;
   align-items: center;
+  margin-left: auto;      /* still pushes group to the right */
+  /* no gap here */
 }
 
 .nav__link {
   font-size: 14px;
   font-weight: 600;
-  padding-top: 4px;
   letter-spacing: 0.35px;
   position: relative;
   display: inline-block;
   text-decoration: none;
   color: #243e63;
-  margin: 0 16px;
+  margin: 0 24px;         /* normal spacing between About / Blog / Pricing / Contact Us */
   transition: color 200ms ease;
 }
 
-.login {
-  margin-left: 40px;
+/* Special spacing just for the Login link */
+.nav__link.login {
+  margin-left: 42px;      /* extra gap after "Contact Us" */
+  margin-right: 22px;      /* tiny gap before "Sign Up" */
 }
+
 
 .nav__link::after {
   content: "";
@@ -142,14 +171,18 @@ nav {
 }
 
 .nav__signup {
-  padding: 10px 32px;
+  margin: 0;                    /* let flexbox center it vertically */
+  padding: 11px 34px;           /* medium size – not too tall or wide */
   border-radius: 9999px;
   background-color: #6415ff;
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 14px;              /* same scale as nav links */
+  line-height: 1.25;            /* keeps height under control */
+  border: none;
+  width: auto;
   text-decoration: none;
-  margin: 0 0 0 24px;
+  cursor: pointer;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -235,20 +268,21 @@ nav {
 }
 
 header {
-  margin-top: 22px;
+  margin-top: 46px;
 }
 
 /* HERO ROW LAYOUT */
 header .row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;       /* vertically align text + image */
   justify-content: space-between;
+  
 }
 
 /* LEFT COLUMN: TEXT BLOCK */
 .row__header--title {
-  flex: 1;
-  max-width: 38rem;
+  flex: 0 0 40%;       /* take about half the row */
+  max-width: 40%;    /* keeps it from stretching too wide */
 }
 
 .header__description {
@@ -256,6 +290,7 @@ header .row {
   font-weight: 700;
   color: #1a202c;
   line-height: 1.25;
+  width:
 }
 
 .header__description--para {
@@ -321,17 +356,36 @@ header .row {
 
 /* RIGHT COLUMN: HERO IMAGE */
 
-.header__image {
-  flex: 2;                 /* image column takes more space */
+.header__image--wrapper {
+  flex: 0 0 60%;          /* the other half of the row */
+  max-width: 60%;
   display: flex;
-  justify-content: flex-start;  /* image moves further left in its column */
+  justify-content: flex-end;  /* image hugs the right edge like Treact */
+  align-items: center;
 }
 
 .header__image--img {
   width: 100%;
-  max-width: 900px;        /* larger illustration */
+  max-width: 720px;       /* feels very close to Treact’s size */
+  height: auto;
 }
 
+/* TRUSTED CUSTOMERS */
+
+.header__customers--title {
+  margin-top: 80px;
+  color: #a0aec0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header__customers {
+  margin-top: 16px;
+  opacity: 0.5;
+  max-width: 80%;       /* or 70% */
+  height: auto;
+  display: block;
+}
 
 /* 
 
@@ -347,6 +401,48 @@ FEATURES ↓
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#features .section__para {
+  text-align: center;
+  max-width: 576px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.feature {
+  flex: 0 0 33.333%;
+}
+
+.feature__row {
+  display: flex;
+  align-items: flex-start;
+  padding: 32px 24px;
+}
+
+.feature__img--wrapper {
+  display: flex;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 500px;
+}
+
+.feature__img {
+  width: 24px;
+  height: 24px;
+}
+
+.feature__text {
+  margin-top: 8px;
+  margin-left: 16px;
+}
+
+.feature__title {
+
 }
 
 /* 
@@ -443,9 +539,24 @@ MOBILE RESPONSIVENESS ↓
     display: block;
   }
 
+  @media (max-width: 1024px) {
+  .row__header--title,
+  .header__image--wrapper {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .header__image--wrapper {
+    margin-top: 48px;
+    justify-content: center;
+  }
+}
+
   header .row {
-    flex-direction: column;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 48px;
   }
 
   footer {
@@ -482,28 +593,3 @@ MOBILE RESPONSIVENESS ↓
 }
 
 
-/* HERO LAYOUT + COLUMN SPACING */
-
-#landing header .row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-#landing .row__header--title {
-  flex: 1 1 0;
-  max-width: 42rem;
-}
-
-#landing .header__image {
-  flex: 1.6 1 0;        /* bigger image column */
-  display: flex;
-  justify-content: center;
-  margin-left: 64px;    /* ⬅ adds clear space between text and image */
-}
-
-#landing .header__image--img {
-  width: 100%;
-  max-width: 820px;      /* keep the nice big illustration */
-}
