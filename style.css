@@ -50,8 +50,12 @@ body {
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: #4b10c9;
+}
+
 section {
-  padding: 0 18px;
+  padding: 0 32px;
 }
 
 .section__tag {
@@ -359,7 +363,6 @@ header .row {
 
 .header__cta-btn:hover {
   background-color: #4b10c9;
-  transform: translateY(-1px);
 }
 
 /* RIGHT COLUMN: HERO IMAGE */
@@ -610,13 +613,104 @@ VALUES ↓
 
 */
 
+.value {
+  flex: 1;
+  margin-right: 2rem;
+}
+
 #values .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/*
+.values__description, 
+.values__img {
+  width: 50%;
+}
+
+.values__description {
+  padding: 32px 64px 32px 0;
+}
+
+#values .section__title {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.values__list {
+  display: flex;
+  margin-top: 32px;
+}
+
+.value__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.value__text {
+  max-width: 22rem
+}
+
+.value__img {
+  width: 20px;
+  height: 20px;
+}
+
+.value__img--wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.value__name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #243e63;
+}
+
+.value__para {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.625;
+  color: #718096;
+  font-weight: 500;
+}
+
+.value:nth-of-type(1) {
+  margin-top: 32px;
+  margin-right: 32px;
+}
+
+.value:nth-of-type(2) {
+  margin-top: 32px; 
+} 
+
+.value:nth-child(1) .value__img--wrapper {
+  background-color: #9ae6b4;
+}
+
+.value:nth-child(2) .value__img--wrapper {
+  background-color: #feb2b2;
+}
+
+#values .values__btn {
+  margin-top: 48px;
+}
+
+.value:last-child {
+  margin-right: 0;
+}
+  
+  
+  
+  
+  
+  /*
 
 PRICING ↓
 
@@ -663,6 +757,8 @@ footer {
   overflow: hidden;
 }
 
+
+
 /* 
 
 MOBILE RESPONSIVENESS ↓
@@ -674,34 +770,8 @@ MOBILE RESPONSIVENESS ↓
     display: block;
   }
 
-  .row__header--title,
-  .header__image--wrapper {
-    flex: 0 0 auto;
-    max-width: 100%;
-  }
+  
 
-  .header__image--wrapper {
-    margin-top: 48px;
-    justify-content: center;
-  }
-
-  header .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 48px;
-    flex-wrap: wrap; /* helps avoid any overlap */
-  }
-
-  footer {
-    padding: 80px 32px;
-  }
-}
-@media (max-width: 768px) {
-  #quality .row,
-  #values .row {
-    flex-direction: column-reverse;
-  }
   #steps .row,
   #testimonials .row {
     flex-direction: column;
