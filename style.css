@@ -54,6 +54,11 @@ body {
   background-color: #4b10c9;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 section {
   padding: 0 32px;
 }
@@ -733,7 +738,7 @@ PRICING ↓
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* was space-between */
   align-items: stretch;
   width: 100%;
   margin: 3rem auto 0;
@@ -899,17 +904,6 @@ PRICING ↓
 .plans > .plan:nth-child(2) .plan__middle {
   border-top: 2px solid rgba(226, 232, 240, 0.5);
   border-bottom: 2px solid rgba(226, 232, 240, 0.5);
-}
-
-/* BUTTON COLORS MATCH STRIPES */
-
-.plans > .plan:nth-child(1) .plan__stripe,
-.plans > .plan:nth-child(1) .plan__btn {
-  background: linear-gradient(
-    90deg,
-    #38b2ac,
-    #4fd1c5
-  ); /* dark teal → light teal */
 }
 
 /* optional: subtle darken on hover */
@@ -1356,19 +1350,31 @@ MOBILE RESPONSIVENESS ↓
 
 */
 
+/* ===========================
+   MOBILE RESPONSIVENESS
+   =========================== */
+
+/* ---------- Large tablets and down (<= 1024px) ---------- */
 @media (max-width: 1024px) {
   .btn__menu {
     display: block;
+    cursor: pointer;
   }
 
+  .container {
+    padding: 72px 0;
+  }
+
+  section {
+    padding: 0 24px;
+  }
+
+  .section__title {
+    font-size: 38px;
+  }
+
+  /* Steps & Testimonials stack */
   #steps .row,
-  #testimonials .row {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 1024px) {
   #testimonials .row {
     flex-direction: column;
     align-items: center;
@@ -1382,19 +1388,341 @@ MOBILE RESPONSIVENESS ↓
   .testimonials__description {
     padding-left: 0;
     margin-top: 32px;
-    text-align: left; /* or center if you prefer */
+    text-align: left;
+  }
+
+  /* Slightly more room for text in hero */
+  .row__header--title {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .header__image--wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Features: from 3 columns -> 2 columns */
+  .features .feature {
+    flex: 0 0 50%;
+  }
+
+  /* Pricing cards tighter */
+  .plans {
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .plans {
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0 24px;
+    }
+
+    .plan {
+      flex: 0 1 45%; /* about 2 per row */
+      max-width: 24rem;
+    }
   }
 }
 
+/* ---------- Tablets / small laptops (<= 768px) ---------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 64px 0;
+  }
+
+  section {
+    padding: 0 16px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+
+  /* NAV: hide links, show hamburger */
+  .nav__links {
+    display: none;
+  }
+
+  .btn__menu {
+    display: block;
+  }
+
+  body.menu--open {
+    overflow: hidden;
+  }
+
+  /* HERO: stack image and text */
+  header {
+    margin-top: 32px;
+  }
+
+  header .row {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .row__header--title,
+  .header__image--wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .header__image--wrapper {
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .header__description--para {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* HERO EMAIL CTA: stack input + button */
+  .header__cta {
+    max-width: 100%;
+  }
+
+  .header__cta-form {
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  }
+
+  .header__input {
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .header__cta-btn {
+    width: 100%;
+  }
+
+  .header__customers--title {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .header__customers {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* FEATURES: 1 column */
+  .features {
+    justify-content: center;
+  }
+
+  .features .feature {
+    flex: 0 0 100%;
+  }
+
+  .feature__row {
+    padding: 24px 16px;
+  }
+
+  /* QUALITY, STEPS, VALUES, TESTIMONIALS: stack */
+  #quality .row,
+  #steps .row,
+  #values .row,
+  #testimonials .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .quality__description,
+  .steps__description,
+  .values__description,
+  .testimonials__description {
+    max-width: 100%;
+  }
+
+  .quality__img--wrapper,
+  .steps__img--wrapper {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .quality__img-inner {
+    max-width: 100%;
+  }
+
+  .quality__img,
+  .steps__img,
+  .testimonials__img,
+  .values__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .values__img {
+    margin-top: 32px;
+  }
+
+  .testimonials__img {
+    margin-bottom: 32px;
+  }
+
+  /* PRICING: stack plans vertically */
+  .plans {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .plan {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* START SECTION: center and stack buttons */
+  .start__container {
+    width: 100%;
+  }
+
+  .start__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .start__title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .start__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .start__button {
+    width: 100%;
+  }
+
+  /* FOOTER: allow columns to wrap */
+  .footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .footer__column {
+    flex: 0 0 45%;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer__logo {
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    /* stack the cards */
+    .plans {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0 16px;
+    }
+
+    .plan {
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+
+    /* remove the scale bump on the middle card so it doesn't overflow */
+    .plans > .plan:nth-child(2) {
+      transform: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18); /* keep it “special” with shadow */
+    }
+
+    /* remove negative margins that can cause horizontal scroll on small screens */
+    .plan__middle {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .plan__bottom {
+      padding: 1.75rem 1.5rem 0;
+    }
+
+    /* shrink / pull in the blob a bit so it doesn't dominate on tiny screens */
+    .plans__blob {
+      left: -5rem;
+      bottom: -12rem;
+      width: 16rem;
+      opacity: 0.3;
+    }
+  }
+}
+
+/* ---------- Small phones (<= 640px) ---------- */
 @media (max-width: 640px) {
   .container {
-    padding: 80px 0;
+    padding: 80px 0; /* keeps your original value */
   }
+
   .nav__logo {
     margin: 8px 0;
     padding-bottom: 4px;
   }
+
   main {
     margin-bottom: 80px;
+  }
+
+  .section__title {
+    font-size: 28px;
+  }
+
+  .section__para {
+    font-size: 16px;
+  }
+
+  .header__description {
+    font-size: 32px;
+  }
+
+  /* Hide decorative SVG blobs/grids on tiny screens */
+  .quality__grid,
+  .steps__grid,
+  .plans__blob,
+  .start__blob--1,
+  .start__blob--2,
+  .footer__blob--1,
+  .footer__blob--2 {
+    display: none;
+  }
+
+  /* Footer columns: single column */
+  .footer__column {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .footer__columns {
+    align-items: center;
+  }
+
+  .footer__socials {
+    margin-top: 8px;
   }
 }
