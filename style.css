@@ -624,7 +624,7 @@ VALUES ↓
   align-items: center;
 }
 
-.values__description, 
+.values__description,
 .values__img {
   width: 50%;
 }
@@ -650,7 +650,7 @@ VALUES ↓
 }
 
 .value__text {
-  max-width: 22rem
+  max-width: 22rem;
 }
 
 .value__img {
@@ -687,8 +687,8 @@ VALUES ↓
 }
 
 .value:nth-of-type(2) {
-  margin-top: 32px; 
-} 
+  margin-top: 32px;
+}
 
 .value:nth-child(1) .value__img--wrapper {
   background-color: #9ae6b4;
@@ -705,16 +705,16 @@ VALUES ↓
 .value:last-child {
   margin-right: 0;
 }
-  
-  
-  
-  
-  
-  /*
+
+/*
 
 PRICING ↓
 
 */
+
+/* =========================
+   PRICING
+========================= */
 
 #pricing .row {
   display: flex;
@@ -722,7 +722,245 @@ PRICING ↓
   align-items: center;
 }
 
-/* 
+#pricing .section__para {
+  max-width: 576px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* PLANS WRAPPER */
+.plans {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  margin: 3rem auto 0;
+  gap: 2rem;
+}
+
+/* INDIVIDUAL PLAN CARD */
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  max-width: 22rem;
+  margin: 0;
+  padding: 0.5rem 2rem 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #1a202c;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* COLORED STRIPE ON TOP OF CARD */
+.plan__stripe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* TOP SECTION (name / price / duration) */
+.plan__top {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  text-transform: uppercase;
+  line-height: 1.625;
+}
+
+.plan__name {
+  font-size: 20px;
+}
+
+.plan__name,
+.plan__price,
+.plan__duration {
+  font-weight: 700;
+  line-height: 1.625;
+}
+
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+/* MIDDLE SECTION (features) */
+.plan__middle {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan__target {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+.plan__feature {
+  margin-top: 0.75rem;
+  font-weight: 500;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Borders only on side plans */
+.plans > .plan:nth-child(1) .plan__middle,
+.plans > .plan:nth-child(3) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+
+/* BOTTOM SECTION (button) */
+.plan__bottom {
+  padding: 2rem 4rem 0;
+  margin-top: auto; /* stick button to bottom */
+}
+
+/* BASE BUTTON STYLE */
+.plan__btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+
+/* Default hover */
+.plan__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   COLORS / VARIANTS
+========================= */
+
+/* Side cards – top stripes */
+.plans > .plan:nth-child(1) .plan__stripe,
+.plans > .plan:nth-child(1) .plan__btn {
+  background: linear-gradient(
+    115deg,
+    #4fd1c5,
+    #38b2ac
+  ); /* light teal → deeper teal */
+}
+
+.plans > .plan:nth-child(3) .plan__stripe {
+  background: linear-gradient(115deg, #f56565, #ed64a6); /* pink/red */
+}
+
+/* Middle card – top stripe */
+.plans > .plan:nth-child(2) .plan__stripe {
+  background: linear-gradient(115deg, #667eea, #4c51bf); /* indigo */
+}
+
+/* Middle card is “featured” */
+.plans > .plan:nth-child(2) {
+  background-color: #2b6cb0;
+  color: #edf2f7;
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Light text inside featured card */
+.plans > .plan:nth-child(2) .plan__name,
+.plans > .plan:nth-child(2) .plan__price,
+.plans > .plan:nth-child(2) .plan__duration,
+.plans > .plan:nth-child(2) .plan__target,
+.plans > .plan:nth-child(2) .plan__feature {
+  color: #edf2f7;
+}
+
+/* Borders in middle card’s feature area */
+.plans > .plan:nth-child(2) .plan__middle {
+  border-top: 2px solid rgba(226, 232, 240, 0.5);
+  border-bottom: 2px solid rgba(226, 232, 240, 0.5);
+}
+
+/* BUTTON COLORS MATCH STRIPES */
+
+.plans > .plan:nth-child(1) .plan__stripe,
+.plans > .plan:nth-child(1) .plan__btn {
+  background: linear-gradient(
+    90deg,
+    #38b2ac,
+    #4fd1c5
+  ); /* dark teal → light teal */
+}
+
+/* optional: subtle darken on hover */
+.plans > .plan:nth-child(1) .plan__btn:hover {
+  filter: brightness(0.95);
+}
+
+/* Plan 2 – pale button on blue card */
+.plans > .plan:nth-child(2) {
+  background: linear-gradient(
+    180deg,
+    #4c51bf,
+    #434190
+  ); /* indigo → darker indigo */
+  color: #edf2f7;
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.plans > .plan:nth-child(2) .plan__btn {
+  background: #f7fafc;
+  color: #4c51bf; /* match the indigo tone */
+  border: none;
+}
+
+.plans > .plan:nth-child(2) .plan__btn:hover {
+  background: #e2e8f0;
+}
+
+/* Plan 3 – pink button */
+.plans > .plan:nth-child(3) .plan__btn {
+  background: linear-gradient(115deg, #f56565, #ed64a6);
+  color: #fff;
+}
+.plans > .plan:nth-child(3) .plan__btn:hover {
+  filter: brightness(0.9);
+}
+
+/* BLOB DECORATION */
+.plans__blob {
+  position: absolute;
+  left: -10rem; /* move blob to the left */
+  bottom: -19rem; /* move it downward */
+  width: 20rem; /* size similar to Treact */
+  opacity: 0.35;
+  z-index: -1; /* keep it BEHIND the cards */
+  pointer-events: none;
+}
+
+/*
 
 TESTIMONIALS ↓
 
@@ -757,8 +995,6 @@ footer {
   overflow: hidden;
 }
 
-
-
 /* 
 
 MOBILE RESPONSIVENESS ↓
@@ -770,15 +1006,10 @@ MOBILE RESPONSIVENESS ↓
     display: block;
   }
 
-  
-
   #steps .row,
   #testimonials .row {
     flex-direction: column;
     align-items: center;
-  }
-  #pricing .row {
-    margin-top: 40px;
   }
 }
 
