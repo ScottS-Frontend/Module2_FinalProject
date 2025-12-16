@@ -308,22 +308,23 @@ header .row {
   font-weight: 700;
   color: #1a202c;
   line-height: 1.25;
+  margin-bottom: 0;
 }
 
 .header__description--para {
-  margin-top: 24px;
+  margin-top: 16px;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.625;
   color: #4a5568;
   max-width: 31rem;
+  margin-bottom: 0;
 }
 
 /* EMAIL CTA BAR UNDER HERO TEXT */
 .header__cta {
-  margin-top: 32px;
-  width: 100%;
-  max-width: 560px;
+  width: fit-content;
+  margin: 20px auto 0;
 }
 
 .header__cta-form {
@@ -333,19 +334,22 @@ header .row {
   border-radius: 9999px;
   padding: 6px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.04);
+  flex-wrap: nowrap;
+  max-width: 32rem;
 }
 
 .header__input {
   flex: 1;
   border: none;
   outline: none;
-  padding: 16px 24px;
-  font-size: 16px;
+  padding: 16px 22px;
+  font-size: 14px;
   color: #4a5568;
   background-color: transparent;
   border-radius: 9999px;
   text-align: left;
+  min-width: 0;
 }
 
 .header__input::placeholder {
@@ -354,13 +358,13 @@ header .row {
 }
 
 .header__cta-btn {
-  padding: 16px 36px;
+  padding: 14px 28px;
   border-radius: 9999px;
   border: none;
   background-color: #6415ff;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
   transition: background 200ms ease, transform 200ms ease;
@@ -409,6 +413,10 @@ FEATURES ↓
 
 */
 
+/* =========================
+   FEATURES
+========================= */
+
 #features {
   position: relative;
 }
@@ -417,14 +425,15 @@ FEATURES ↓
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 #features .section__para {
-  text-align: center;
-  max-width: 576px;
+  max-width: 36rem; /* ~576px (same as you had), but more “designy” */
 }
 
 .features {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 48px;
@@ -441,20 +450,41 @@ FEATURES ↓
 }
 
 .feature__img--wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  flex-shrink: 0;
   display: flex;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #e5e7eb;
-  border-radius: 500px;
+  box-sizing: border-box;
 }
 
 .feature__img {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .feature__text {
-  margin-top: 8px;
   margin-left: 16px;
+  margin-top: 6px;
+  text-align: left; /* keeps the text block aligned like the example */
+}
+
+.feature__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #243e63;
+}
+
+.feature__para {
+  margin-top: 8px;
+  color: #7c8ba1;
+  font-size: 16px;
+  line-height: 1.625;
+  max-width: 18rem; /* helps the cards “feel” consistent */
 }
 
 /* 
@@ -652,6 +682,10 @@ VALUES ↓
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 12px;
+  text-align: left;
 }
 
 .value__text {
@@ -676,6 +710,8 @@ VALUES ↓
   font-size: 20px;
   font-weight: 700;
   color: #243e63;
+  margin-left: 0;
+  margin-top: 8px;
 }
 
 .value__para {
@@ -686,13 +722,10 @@ VALUES ↓
   font-weight: 500;
 }
 
-.value:nth-of-type(1) {
-  margin-top: 32px;
-  margin-right: 32px;
-}
-
+.value:nth-of-type(1),
 .value:nth-of-type(2) {
-  margin-top: 32px;
+  margin-top: 0;
+  margin-right: 0;
 }
 
 .value:nth-child(1) .value__img--wrapper {
@@ -1145,7 +1178,8 @@ START / CALL TO ACTION ↓
   color: #f7fafc;
   font-size: 30px;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.35;
+  max-wdith: 22ch;
   z-index: 2;
 }
 
@@ -1356,6 +1390,11 @@ MOBILE RESPONSIVENESS ↓
 
 /* ---------- Large tablets and down (<= 1024px) ---------- */
 @media (max-width: 1024px) {
+  header .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .btn__menu {
     display: block;
     cursor: pointer;
@@ -1373,28 +1412,25 @@ MOBILE RESPONSIVENESS ↓
     font-size: 38px;
   }
 
-  /* Steps & Testimonials stack */
-  #steps .row,
-  #testimonials .row {
+  /* Values list (optional at 1024) */
+  .values__list {
+    flex-direction: column;
+  }
+
+  .row__header--title {
+    max-width: 50%;
+    text-align: center;
+  }
+
+  .header__customers {
+    margin: 16px auto 0;
+  }
+
+  .header__description {
+    text-align: center;
+    display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .testimonials__img,
-  .testimonials__description {
-    width: 100%;
-  }
-
-  .testimonials__description {
-    padding-left: 0;
-    margin-top: 32px;
-    text-align: left;
-  }
-
-  /* Slightly more room for text in hero */
-  .row__header--title {
-    flex: 0 0 50%;
-    max-width: 50%;
   }
 
   .header__image--wrapper {
@@ -1402,27 +1438,24 @@ MOBILE RESPONSIVENESS ↓
     max-width: 50%;
   }
 
-  /* Features: from 3 columns -> 2 columns */
   .features .feature {
     flex: 0 0 50%;
   }
 
-  /* Pricing cards tighter */
-  .plans {
-    gap: 24px;
+  .feature__row {
+    padding: 32px 8px;
+    margin: 0 16px;
   }
 
-  @media (max-width: 1024px) {
-    .plans {
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0 24px;
-    }
+  /* Pricing: stack */
+  .plans {
+    align-items: center;
+    flex-direction: column;
+  }
 
-    .plan {
-      flex: 0 1 45%; /* about 2 per row */
-      max-width: 24rem;
-    }
+  .plan {
+    flex: 0 1 45%;
+    max-width: 24rem;
   }
 }
 
@@ -1463,7 +1496,7 @@ MOBILE RESPONSIVENESS ↓
   }
 
   header .row {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
@@ -1482,36 +1515,44 @@ MOBILE RESPONSIVENESS ↓
   .header__description--para {
     margin-left: auto;
     margin-right: auto;
+    max-width: 36rem;
+    font-size: 16px;
   }
 
   /* HERO EMAIL CTA: stack input + button */
   .header__cta {
-    max-width: 100%;
+    width: fit-content;
+    margin: 24px auto 0;
   }
 
   .header__cta-form {
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
+    max-width: 72rem;
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
   }
 
   .header__input {
     margin-bottom: 12px;
     text-align: left;
+    min-width: 0;
+    flex: 2;
+    padding-right: 28px;
   }
 
   .header__cta-btn {
-    width: 100%;
+    padding: 14px 24px;
   }
 
   .header__customers--title {
-    margin-top: 40px;
     text-align: center;
   }
 
   .header__customers {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 16px auto 0;
+    padding-right: 0;
+    opacity: 0.5;
+    max-width: clamp(320px, 50vw, 480px);
   }
 
   /* FEATURES: 1 column */
@@ -1523,24 +1564,94 @@ MOBILE RESPONSIVENESS ↓
     flex: 0 0 100%;
   }
 
+  .feature {
+    display: flex;
+    justify-content: center;
+  }
+
   .feature__row {
     padding: 24px 16px;
+    justify-content: center;
+  }
+
+  .feature__text {
+    max-width: 22rem;
   }
 
   /* QUALITY, STEPS, VALUES, TESTIMONIALS: stack */
-  #quality .row,
-  #steps .row,
-  #values .row,
-  #testimonials .row {
+  #quality .row {
+    flex-direction: column-reverse; /* image first, then text */
+    align-items: center;
+  }
+
+  .steps__description {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 32px;
+    text-align: center;
+    max-width: 560px;
+    margin-top: 48px;
+  }
+
+  .steps__img--wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .step {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .step__number {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .step__description {
+    margin-left: 0;
+    max-width: 22rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .steps__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .step__title,
+  .step__para {
+    text-align: center;
+  }
+
+  #steps .row {
     flex-direction: column;
     align-items: center;
     text-align: left;
   }
 
+  .quality__description {
+    text-align: center;
+    align-items: center;
+  }
+
+  .quality__description .btn {
+    align-self: center;
+  }
+
+  .quality__img--wrapper {
+    margin-right: 56px;
+  }
+
   .quality__description,
   .steps__description,
-  .values__description,
-  .testimonials__description {
+  .values__description {
     max-width: 100%;
   }
 
@@ -1556,30 +1667,155 @@ MOBILE RESPONSIVENESS ↓
 
   .quality__img,
   .steps__img,
-  .testimonials__img,
   .values__img {
     width: 100%;
     height: auto;
   }
 
-  .values__img {
-    margin-top: 32px;
+  /* VALUES (<= 768px) */
+  /* ===== VALUES (lock for <= 768px) ===== */
+  @media (max-width: 768px) {
+    #values .row {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+
+    #values .values__description,
+    #values .values__img {
+      width: 100%;
+    }
+
+    #values .values__description {
+      padding: 0;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* THIS is what prevents “drift” */
+    #values .values__list {
+      width: 100%;
+      max-width: 24rem; /* pick the width you like */
+      margin: 32px auto 0; /* centers the whole list block */
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: stretch; /* keeps cards full width of the list */
+    }
+
+    #values .value {
+      width: 100%;
+      margin: 0; /* remove any leftover offsets */
+    }
+
+    /* Keep icon left of title */
+    #values .value__title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    #values .value__name {
+      margin: 0;
+    }
   }
+
+  /* PRICING: stack plans vertically */
+  .plans {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .plan {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 24rem;
+  }
+
+  /* remove the scale bump on the middle card so it doesn't overflow */
+  .plans > .plan:nth-child(2) {
+    transform: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18); /* keep it “special” with shadow */
+  }
+
+  /* remove negative margins that can cause horizontal scroll on small screens */
+  .plan__middle {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .plan__bottom {
+    padding: 1.75rem 1.5rem 0;
+  }
+
+  /* shrink / pull in the blob a bit so it doesn't dominate on tiny screens */
+  .plans__blob {
+    left: -5rem;
+    bottom: -12rem;
+    width: 16rem;
+    opacity: 0.3;
+  }
+
+  /* TESTIMONIALS SECTION: */
 
   .testimonials__img {
     margin-bottom: 32px;
   }
 
-  /* PRICING: stack plans vertically */
-  .plans {
-    display: flex;
+  #testimonials .row {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 
-  .plan {
+  .testimonials__img,
+  .testimonials__description {
     width: 100%;
-    max-width: none;
+  }
+
+  .testimonials__description {
+    padding-left: 0;
+    margin-top: 32px;
+    align-items: center;
+    text-align: center;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial__bottom {
+    justify-content: center;
+    gap: 52px;
+    flex-wrap: wrap;
+  }
+
+  /* stack the cards */
+
+  #testimonials .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials__img,
+  .testimonials__description {
+    width: 100%;
+  }
+
+  .testimonials__description {
+    padding-left: 0;
+    margin-top: 32px;
   }
 
   /* START SECTION: center and stack buttons */
@@ -1595,33 +1831,49 @@ MOBILE RESPONSIVENESS ↓
   }
 
   .start__title {
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 1.35;
+    max-width: 22ch; /* makes it wrap to ~2 lines */
+    margin-bottom: 0; /* optional since gap handles spacing */
   }
 
   .start__buttons {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 320px;
+    flex-direction: row; /* side-by-side */
+    justify-content: center;
+    gap: 16px;
+    width: auto; /* don’t force full width */
+    max-width: none;
   }
 
   .start__button {
-    width: 100%;
+    width: auto; /* don’t stretch */
+  }
+
+  #start .start__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  #start .start__title {
+    font-size: 30px; /* bump size */
+    line-height: 1.35;
+    max-width: 22ch; /* forces it to wrap to ~2 lines */
+  }
+
+  #start .start__buttons {
+    justify-content: center; /* not flex-end */
+    flex-direction: row; /* stay side-by-side */
+    width: auto;
+  }
+
+  #start .start__button--primary {
+    margin-right: 0; /* remove the desktop spacing hack */
   }
 
   /* FOOTER: allow columns to wrap */
-  .footer__columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-  }
-
-  .footer__column {
-    flex: 0 0 45%;
-  }
 
   .footer__bottom {
     flex-direction: column;
@@ -1634,43 +1886,19 @@ MOBILE RESPONSIVENESS ↓
     justify-content: center;
   }
 
-  @media (max-width: 768px) {
-    /* stack the cards */
-    .plans {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 0 16px;
-    }
+  /* FOOTER (<= 768px): 3 columns then 2 columns */
+  .footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 24px 32px;
+    width: 100%;
+  }
 
-    .plan {
-      flex: 0 0 auto;
-      max-width: 100%;
-    }
-
-    /* remove the scale bump on the middle card so it doesn't overflow */
-    .plans > .plan:nth-child(2) {
-      transform: none;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18); /* keep it “special” with shadow */
-    }
-
-    /* remove negative margins that can cause horizontal scroll on small screens */
-    .plan__middle {
-      margin-left: 0;
-      margin-right: 0;
-      padding: 1.75rem 1.5rem;
-    }
-
-    .plan__bottom {
-      padding: 1.75rem 1.5rem 0;
-    }
-
-    /* shrink / pull in the blob a bit so it doesn't dominate on tiny screens */
-    .plans__blob {
-      left: -5rem;
-      bottom: -12rem;
-      width: 16rem;
-      opacity: 0.3;
-    }
+  .footer__column {
+    flex: 0 0 calc((100% - 64px) / 3); /* 3 across (2 gaps x 32px) */
+    max-width: calc((100% - 64px) / 3);
+    align-items: flex-start;
   }
 }
 
@@ -1699,6 +1927,10 @@ MOBILE RESPONSIVENESS ↓
 
   .header__description {
     font-size: 32px;
+  }
+
+  .header__input {
+    margin-bottom: 12px;
   }
 
   /* Hide decorative SVG blobs/grids on tiny screens */
