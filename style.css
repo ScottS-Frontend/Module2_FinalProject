@@ -153,7 +153,7 @@ nav {
   transition: color 200ms ease;
 }
 
-/* Special spacing just for the Login link */
+
 .nav__link.login {
   margin-left: 42px;
   margin-right: 22px;
@@ -413,7 +413,7 @@ FEATURES ↓
 }
 
 #features .section__para {
-  max-width: 36rem; /* ~576px (same as you had), but more “designy” */
+  max-width: 36rem; 
 }
 
 .features {
@@ -453,7 +453,7 @@ FEATURES ↓
 .feature__text {
   margin-left: 16px;
   margin-top: 6px;
-  text-align: left; /* keeps the text block aligned like the example */
+  text-align: left; 
 }
 
 .feature__title {
@@ -468,7 +468,7 @@ FEATURES ↓
   color: #7c8ba1;
   font-size: 16px;
   line-height: 1.625;
-  max-width: 18rem; /* helps the cards “feel” consistent */
+  max-width: 18rem; 
 }
 
 /* QUALITY WORK ↓ */
@@ -478,12 +478,12 @@ FEATURES ↓
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0; /* important: we’ll control spacing with column widths */
+  gap: 0; 
 }
 
 /* LEFT column */
 #quality .quality__description {
-  width: 42%; /* this is the big change */
+  width: 42%; 
   max-width: 560px;
   display: flex;
   flex-direction: column;
@@ -504,18 +504,18 @@ FEATURES ↓
 
 /* RIGHT column */
 #quality .quality__img--wrapper {
-  width: 58%; /* this is the other big change */
+  width: 58%; 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 40px; /* small “optical” nudge inward */
+  padding-right: 40px; 
   box-sizing: border-box;
 }
 
 #quality .quality__img-inner {
   position: relative;
   width: 100%;
-  max-width: 540px; /* keeps image from getting huge */
+  max-width: 540px;
   display: inline-block;
 }
 
@@ -756,7 +756,7 @@ VALUES ↓
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* was space-between */
+  justify-content: center;
   align-items: stretch;
   width: 100%;
   margin: 3rem auto 0;
@@ -854,7 +854,7 @@ VALUES ↓
 /* BOTTOM SECTION (button) */
 .plan__bottom {
   padding: 2rem 4rem 0;
-  margin-top: auto; /* stick button to bottom */
+  margin-top: auto; 
 }
 
 /* BASE BUTTON STYLE */
@@ -944,7 +944,7 @@ VALUES ↓
 
 .plans > .plan:nth-child(2) .plan__btn {
   background: #f7fafc;
-  color: #4c51bf; /* match the indigo tone */
+  color: #4c51bf; 
   border: none;
 }
 
@@ -964,11 +964,11 @@ VALUES ↓
 /* BLOB DECORATION */
 .plans__blob {
   position: absolute;
-  left: -10rem; /* move blob to the left */
-  bottom: -19rem; /* move it downward */
-  width: 20rem; /* size similar to Treact */
+  left: -10rem; 
+  bottom: -19rem; 
+  width: 20rem; 
   opacity: 0.35;
-  z-index: -1; /* keep it BEHIND the cards */
+  z-index: -1; 
   pointer-events: none;
 }
 
@@ -1153,7 +1153,7 @@ START / CALL TO ACTION ↓
   max-width: 1024px;
   padding: 0 32px;
   display: flex;
-  justify-content: space-between; /* <-- key change */
+  justify-content: space-between; 
   align-items: center;
   gap: 24px;
 }
@@ -1221,7 +1221,7 @@ FOOTER ↓
 */
 
 footer {
-  padding: 95px 32px 95px; /* top / left-right / bottom */
+  padding: 95px 32px 95px;
   background-color: rgb(100, 21, 255);
   margin-bottom: -32px;
   position: relative;
@@ -1278,7 +1278,7 @@ footer {
   font-weight: 700;
   color: #f7fafc;
   line-height: 1.5;
-  margin-bottom: 16px; /* adjust this number to taste */
+  margin-bottom: 16px; 
 }
 
 .footer__column--link {
@@ -1288,13 +1288,13 @@ footer {
   font-weight: 500;
   position: relative;
   cursor: pointer;
-  text-decoration: none; /* remove underline */
-  display: block; /* each link on its own line */
-  margin-top: 8px; /* spacing between links */
+  text-decoration: none; 
+  display: block; 
+  margin-top: 8px; 
 }
 
 .footer__column--link:hover {
-  text-decoration: underline; /* optional: underline on hover */
+  text-decoration: underline;
 }
 
 .footer__divider {
@@ -1350,16 +1350,16 @@ footer {
   z-index: 2;
   cursor: pointer;
   transition: all 300ms ease;
-  color: #1a202c; /* <-- dark icon color */
+  color: #1a202c; 
 }
 
 .footer__social--link:hover {
-  background: #e2e8f0; /* light gray */
-  color: #4a5568; /* darker gray for icon */
+  background: #e2e8f0; 
+  color: #4a5568; 
 }
 
 .footer__social--link svg {
-  width: 18px; /* make icon size explicit */
+  width: 18px; 
   height: 18px;
 }
 
@@ -1572,7 +1572,7 @@ MOBILE RESPONSIVENESS ↓
 
   /* QUALITY, STEPS, VALUES, TESTIMONIALS: stack */
   #quality .row {
-    flex-direction: column-reverse; /* image first, then text */
+    flex-direction: column-reverse;
     align-items: center;
   }
 
@@ -1586,8 +1586,8 @@ MOBILE RESPONSIVENESS ↓
 
   #quality .quality__img-inner {
     width: 100%;
-    max-width: 540px; /* match your desktop max */
-    position: relative; /* anchor the grid */
+    max-width: 540px;
+    position: relative;
   }
 
   #quality .quality__description .section__title {
@@ -1709,6 +1709,7 @@ MOBILE RESPONSIVENESS ↓
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
+    row-gap: 48px;
   }
 
   #values .values__description {
@@ -1718,6 +1719,7 @@ MOBILE RESPONSIVENESS ↓
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
 
   #values .values__list {
@@ -1727,13 +1729,14 @@ MOBILE RESPONSIVENESS ↓
     display: flex;
     flex-direction: column;
     gap: 24px;
-    align-items: stretch;
+    align-items: center;
   }
 
   #values .value {
     width: 100%;
     max-width: 420px;
     margin: 0;
+    margin-right: 0;
   }
 
   #values .value__title {
@@ -1768,13 +1771,13 @@ MOBILE RESPONSIVENESS ↓
     max-width: 24rem;
   }
 
-  /* remove the scale bump on the middle card so it doesn't overflow */
+  
   .plans > .plan:nth-child(2) {
     transform: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18); /* keep it “special” with shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
   }
 
-  /* remove negative margins that can cause horizontal scroll on small screens */
+  
   .plan__middle {
     margin-left: 0;
     margin-right: 0;
@@ -1785,7 +1788,7 @@ MOBILE RESPONSIVENESS ↓
     padding: 1.75rem 1.5rem 0;
   }
 
-  /* shrink / pull in the blob a bit so it doesn't dominate on tiny screens */
+  
   .plans__blob {
     left: -5rem;
     bottom: -12rem;
@@ -1862,21 +1865,21 @@ MOBILE RESPONSIVENESS ↓
   .start__title {
     font-size: 30px;
     line-height: 1.35;
-    max-width: 22ch; /* makes it wrap to ~2 lines */
-    margin-bottom: 0; /* optional since gap handles spacing */
+    max-width: 22ch; 
+    margin-bottom: 0; 
   }
 
   .start__buttons {
     display: flex;
-    flex-direction: row; /* side-by-side */
+    flex-direction: row; 
     justify-content: center;
     gap: 16px;
-    width: auto; /* don’t force full width */
+    width: auto; 
     max-width: none;
   }
 
   .start__button {
-    width: auto; /* don’t stretch */
+    width: auto;
   }
 
   #start .start__row {
@@ -1887,19 +1890,19 @@ MOBILE RESPONSIVENESS ↓
   }
 
   #start .start__title {
-    font-size: 30px; /* bump size */
+    font-size: 30px;
     line-height: 1.35;
-    max-width: 22ch; /* forces it to wrap to ~2 lines */
+    max-width: 22ch;
   }
 
   #start .start__buttons {
-    justify-content: center; /* not flex-end */
-    flex-direction: row; /* stay side-by-side */
+    justify-content: center;
+    flex-direction: row; 
     width: auto;
   }
 
   #start .start__button--primary {
-    margin-right: 0; /* remove the desktop spacing hack */
+    margin-right: 0; 
   }
 
   /* FOOTER: allow columns to wrap */
@@ -2034,7 +2037,6 @@ MOBILE RESPONSIVENESS ↓
   #features .row,
   #quality .row,
   #steps .row,
-  #values .row,
   #testimonials .row,
   #pricing .row {
     flex-direction: column;
@@ -2061,11 +2063,21 @@ MOBILE RESPONSIVENESS ↓
 
   #values .row {
     flex-direction: column-reverse;
+    row-gap: 56px;
   }
 
+  #values .values__img {
+    width: 100%;
+  }
   #values .values__description {
     max-width: 520px;
     margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #values .values__list {
@@ -2075,6 +2087,8 @@ MOBILE RESPONSIVENESS ↓
 
   #values .value {
     max-width: 380px;
+    margin-right: 0;
+    width: 100%;
   }
 
   #values .value__para {
@@ -2140,7 +2154,7 @@ MOBILE RESPONSIVENESS ↓
   }
 
   #quality .quality__img-inner {
-    position: relative; /* anchors the grid */
+    position: relative;
     width: 100%;
     max-width: 540px;
   }
@@ -2155,7 +2169,7 @@ MOBILE RESPONSIVENESS ↓
 
   #quality .quality__description {
     width: 100%;
-    max-width: 640px; /* or 100% if you want it fully fluid */
+    max-width: 640px;
     align-items: center;
     text-align: center;
     margin-top: 96px;
@@ -2165,9 +2179,48 @@ MOBILE RESPONSIVENESS ↓
     margin-bottom: 24px;
   }
 
+    /* -------------------------
+     START SECTION
+  ------------------------- */
+  .start__blob--2{
+    transform: translate(1rem, -16rem) !important;
+  }
+
+   .start__blob--1{
+    transform: translate( 1rem, 6rem) !important;
+  }
+
+
+
   /* -------------------------
      FOOTER
   ------------------------- */
+
+  .footer__column--title {
+    margin-bottom: 12px;
+  }
+
+  .footer__columns {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .footer__column {
+    flex: 0 0 auto;
+    max-width: none;
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__column--link {
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.9;
+  }
+
+
   .footer__bottom {
     flex-direction: column;
     align-items: center;
