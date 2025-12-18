@@ -263,7 +263,7 @@
               <div class="section__tag">QUALITY WORK</div>
               <h2 class="section__title">
                 Designed & Developed by
-                <span class="purple">Professionals</span>
+                <span class="purple">Professionals.</span>
               </h2>
               <p class="section__para">
                 Lorem ipsum dolor amet adipisicing elit. Enim quam cupiditate
@@ -283,37 +283,35 @@
 
                 <svg
                   class="quality__grid"
-                  viewBox="0 0 160 160"
+                  viewBox="0 0 80 80"
                   aria-hidden="true"
                 >
                   <defs>
-                    <!-- dot spacing: 16px grid; dot size controlled by r -->
+                    <!-- Dot pattern: 10 × 10 -->
                     <pattern
-                      id="qualityDots"
-                      width="15"
-                      height="15"
+                      id="qDots"
+                      width="8"
+                      height="8"
                       patternUnits="userSpaceOnUse"
                     >
-                      <circle
-                        cx="2.6"
-                        cy="2.6"
-                        r="2.0"
-                        fill="currentColor"
-                      ></circle>
+                      <circle cx="4" cy="4" r="2.2" fill="#6415ff" />
                     </pattern>
 
-                    <!-- L-shape: keep RIGHT half + BOTTOM half (empty is top-left) -->
-                    <clipPath id="qualityLClip">
-                      <path d="M80 0 H160 V160 H0 V80 H80 Z"></path>
+                    <!-- Backwards L: right half + bottom half -->
+                    <clipPath id="qClip" clipPathUnits="userSpaceOnUse">
+                      <!-- right side -->
+                      <rect x="40" y="0" width="40" height="120" />
+                      <!-- bottom -->
+                      <rect x="0" y="40" width="80" height="60" />
                     </clipPath>
                   </defs>
 
                   <rect
-                    width="160"
-                    height="160"
-                    fill="url(#qualityDots)"
-                    clip-path="url(#qualityLClip)"
-                  ></rect>
+                    width="120"
+                    height="120"
+                    fill="url(#qDots)"
+                    clip-path="url(#qClip)"
+                  />
                 </svg>
               </div>
             </figure>
